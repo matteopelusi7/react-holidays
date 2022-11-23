@@ -1,7 +1,7 @@
 import React from "react";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 
-const SingleHoliday = ({titolo, durata, descrizione, prezzo, img}) => {
+const SingleHoliday = ({titolo, durata, descrizione, prev, prezzo, img, next}) => {
     return (
         <div className="holiday-container">
             <img src={img} alt={titolo} className='img' />
@@ -13,8 +13,8 @@ const SingleHoliday = ({titolo, durata, descrizione, prezzo, img}) => {
                     <h5 style={{color: 'var(--primary-blue)'}}>{(prezzo / 100).toFixed(2)} &euro;</h5>
                 </div>
                 <div className="btn-group">
-                    <button className="btn btn-reset"><GrFormPreviousLink className="icon" /></button>
-                    <button className="btn btn-reset"><GrFormNextLink className="icon" /></button>
+                    <button className="btn btn-reset" onClick={prev}><GrFormPreviousLink className="icon" /></button>
+                    <button className="btn btn-reset" onClick={next}><GrFormNextLink className="icon" /></button>
                 </div>
             </div>
         </div>
